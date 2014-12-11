@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4298AD7C1A37FD8D00130B5B /* _Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD791A37FD8D00130B5B /* _Event.m */; };
+		4298AD7D1A37FD8D00130B5B /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD7B1A37FD8D00130B5B /* Event.m */; };
+		4298AD801A37FE5700130B5B /* RestKitConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD7F1A37FE5700130B5B /* RestKitConfig.m */; };
+		4298AD831A37FEDB00130B5B /* SyncRestKitConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD821A37FEDB00130B5B /* SyncRestKitConfig.m */; };
+		4298AD861A37FF6E00130B5B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD851A37FF6E00130B5B /* Constants.m */; };
+		4298AD8A1A38023A00130B5B /* SyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD891A38023A00130B5B /* SyncRequest.m */; };
+		4298AD8D1A3802C600130B5B /* SyncResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD8C1A3802C600130B5B /* SyncResponse.m */; };
+		4298AD931A388BED00130B5B /* RestKitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD921A388BED00130B5B /* RestKitService.m */; };
+		4298AD971A388C3C00130B5B /* SyncService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD961A388C3C00130B5B /* SyncService.m */; };
+		4298AD9A1A389D1900130B5B /* SyncErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD991A389D1900130B5B /* SyncErrorResponse.m */; };
+		4298AD9D1A389F4B00130B5B /* SyncObjectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4298AD9C1A389F4B00130B5B /* SyncObjectResponse.m */; };
 		42D6E56F1A37F5BD0000F84D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6E56E1A37F5BD0000F84D /* main.m */; };
 		42D6E5721A37F5BD0000F84D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6E5711A37F5BD0000F84D /* AppDelegate.m */; };
 		42D6E5751A37F5BD0000F84D /* sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42D6E5731A37F5BD0000F84D /* sync.xcdatamodeld */; };
@@ -16,6 +27,7 @@
 		42D6E5801A37F5BD0000F84D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D6E57F1A37F5BD0000F84D /* Images.xcassets */; };
 		42D6E5831A37F5BD0000F84D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D6E5811A37F5BD0000F84D /* LaunchScreen.xib */; };
 		42D6E58F1A37F5BD0000F84D /* syncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D6E58E1A37F5BD0000F84D /* syncTests.m */; };
+		4FC8FAC1E232F6AB08912AF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B7573C260ADC01905DDFE0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +41,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28B7573C260ADC01905DDFE0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4298AD781A37FD8D00130B5B /* _Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Event.h; sourceTree = "<group>"; };
+		4298AD791A37FD8D00130B5B /* _Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Event.m; sourceTree = "<group>"; };
+		4298AD7A1A37FD8D00130B5B /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		4298AD7B1A37FD8D00130B5B /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		4298AD7E1A37FE5700130B5B /* RestKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitConfig.h; sourceTree = "<group>"; };
+		4298AD7F1A37FE5700130B5B /* RestKitConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestKitConfig.m; sourceTree = "<group>"; };
+		4298AD811A37FEDB00130B5B /* SyncRestKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncRestKitConfig.h; sourceTree = "<group>"; };
+		4298AD821A37FEDB00130B5B /* SyncRestKitConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncRestKitConfig.m; sourceTree = "<group>"; };
+		4298AD841A37FF6E00130B5B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4298AD851A37FF6E00130B5B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		4298AD881A38023A00130B5B /* SyncRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncRequest.h; sourceTree = "<group>"; };
+		4298AD891A38023A00130B5B /* SyncRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncRequest.m; sourceTree = "<group>"; };
+		4298AD8B1A3802C600130B5B /* SyncResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncResponse.h; sourceTree = "<group>"; };
+		4298AD8C1A3802C600130B5B /* SyncResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncResponse.m; sourceTree = "<group>"; };
+		4298AD911A388BED00130B5B /* RestKitService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitService.h; sourceTree = "<group>"; };
+		4298AD921A388BED00130B5B /* RestKitService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestKitService.m; sourceTree = "<group>"; };
+		4298AD951A388C3C00130B5B /* SyncService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncService.h; sourceTree = "<group>"; };
+		4298AD961A388C3C00130B5B /* SyncService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncService.m; sourceTree = "<group>"; };
+		4298AD981A389D1900130B5B /* SyncErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncErrorResponse.h; sourceTree = "<group>"; };
+		4298AD991A389D1900130B5B /* SyncErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncErrorResponse.m; sourceTree = "<group>"; };
+		4298AD9B1A389F4B00130B5B /* SyncObjectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncObjectResponse.h; sourceTree = "<group>"; };
+		4298AD9C1A389F4B00130B5B /* SyncObjectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncObjectResponse.m; sourceTree = "<group>"; };
 		42D6E5691A37F5BD0000F84D /* sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D6E56D1A37F5BD0000F84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D6E56E1A37F5BD0000F84D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,6 +80,8 @@
 		42D6E5881A37F5BD0000F84D /* syncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = syncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D6E58D1A37F5BD0000F84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D6E58E1A37F5BD0000F84D /* syncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = syncTests.m; sourceTree = "<group>"; };
+		7CB2187260717E703DE30C1B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EB123C6B370E92E322F2553E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC8FAC1E232F6AB08912AF7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +103,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4298AD771A37FD8D00130B5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4298AD781A37FD8D00130B5B /* _Event.h */,
+				4298AD791A37FD8D00130B5B /* _Event.m */,
+				4298AD7A1A37FD8D00130B5B /* Event.h */,
+				4298AD7B1A37FD8D00130B5B /* Event.m */,
+				4298AD881A38023A00130B5B /* SyncRequest.h */,
+				4298AD891A38023A00130B5B /* SyncRequest.m */,
+				4298AD8B1A3802C600130B5B /* SyncResponse.h */,
+				4298AD8C1A3802C600130B5B /* SyncResponse.m */,
+				4298AD9B1A389F4B00130B5B /* SyncObjectResponse.h */,
+				4298AD9C1A389F4B00130B5B /* SyncObjectResponse.m */,
+				4298AD981A389D1900130B5B /* SyncErrorResponse.h */,
+				4298AD991A389D1900130B5B /* SyncErrorResponse.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4298AD871A37FF7700130B5B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4298AD841A37FF6E00130B5B /* Constants.h */,
+				4298AD851A37FF6E00130B5B /* Constants.m */,
+				4298AD7E1A37FE5700130B5B /* RestKitConfig.h */,
+				4298AD7F1A37FE5700130B5B /* RestKitConfig.m */,
+				4298AD811A37FEDB00130B5B /* SyncRestKitConfig.h */,
+				4298AD821A37FEDB00130B5B /* SyncRestKitConfig.m */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		4298AD941A388BF100130B5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4298AD911A388BED00130B5B /* RestKitService.h */,
+				4298AD921A388BED00130B5B /* RestKitService.m */,
+				4298AD951A388C3C00130B5B /* SyncService.h */,
+				4298AD961A388C3C00130B5B /* SyncService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		42D6E5601A37F5BD0000F84D = {
 			isa = PBXGroup;
 			children = (
 				42D6E56B1A37F5BD0000F84D /* sync */,
 				42D6E58B1A37F5BD0000F84D /* syncTests */,
 				42D6E56A1A37F5BD0000F84D /* Products */,
+				FC4FDABD6433DFF8A2C3DC7C /* Pods */,
+				7B22BB82C06EB956E0A6AD4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +180,9 @@
 				42D6E5811A37F5BD0000F84D /* LaunchScreen.xib */,
 				42D6E5731A37F5BD0000F84D /* sync.xcdatamodeld */,
 				42D6E56C1A37F5BD0000F84D /* Supporting Files */,
+				4298AD871A37FF7700130B5B /* Config */,
+				4298AD771A37FD8D00130B5B /* Models */,
+				4298AD941A388BF100130B5B /* Services */,
 			);
 			path = sync;
 			sourceTree = "<group>";
@@ -127,6 +213,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7B22BB82C06EB956E0A6AD4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28B7573C260ADC01905DDFE0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC4FDABD6433DFF8A2C3DC7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CB2187260717E703DE30C1B /* Pods.debug.xcconfig */,
+				EB123C6B370E92E322F2553E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42D6E5921A37F5BD0000F84D /* Build configuration list for PBXNativeTarget "sync" */;
 			buildPhases = (
+				DC997186F27D60B141F10771 /* Check Pods Manifest.lock */,
 				42D6E5651A37F5BD0000F84D /* Sources */,
 				42D6E5661A37F5BD0000F84D /* Frameworks */,
 				42D6E5671A37F5BD0000F84D /* Resources */,
+				E8163171F1D419A9214C494C /* Copy Pods Resources */,
+				4298AD761A37F8FD00130B5B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -222,16 +328,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4298AD761A37F8FD00130B5B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\necho \"Running Mogenerator\"\n/usr/local/bin/mogenerator --v2 --model sync/sync.xcdatamodeld --output-dir sync/Models\necho \"Finished Mogenerator\"\nelse\necho \"Skipping Mogenerator\"\nfi";
+		};
+		DC997186F27D60B141F10771 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8163171F1D419A9214C494C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42D6E5651A37F5BD0000F84D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4298AD831A37FEDB00130B5B /* SyncRestKitConfig.m in Sources */,
+				4298AD8D1A3802C600130B5B /* SyncResponse.m in Sources */,
+				4298AD9D1A389F4B00130B5B /* SyncObjectResponse.m in Sources */,
 				42D6E57B1A37F5BD0000F84D /* DetailViewController.m in Sources */,
+				4298AD9A1A389D1900130B5B /* SyncErrorResponse.m in Sources */,
+				4298AD931A388BED00130B5B /* RestKitService.m in Sources */,
 				42D6E5781A37F5BD0000F84D /* MasterViewController.m in Sources */,
 				42D6E5721A37F5BD0000F84D /* AppDelegate.m in Sources */,
 				42D6E5751A37F5BD0000F84D /* sync.xcdatamodeld in Sources */,
+				4298AD861A37FF6E00130B5B /* Constants.m in Sources */,
+				4298AD7C1A37FD8D00130B5B /* _Event.m in Sources */,
 				42D6E56F1A37F5BD0000F84D /* main.m in Sources */,
+				4298AD971A388C3C00130B5B /* SyncService.m in Sources */,
+				4298AD801A37FE5700130B5B /* RestKitConfig.m in Sources */,
+				4298AD7D1A37FD8D00130B5B /* Event.m in Sources */,
+				4298AD8A1A38023A00130B5B /* SyncRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +514,7 @@
 		};
 		42D6E5931A37F5BD0000F84D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB2187260717E703DE30C1B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = sync/Info.plist;
@@ -361,6 +525,7 @@
 		};
 		42D6E5941A37F5BD0000F84D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB123C6B370E92E322F2553E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = sync/Info.plist;
@@ -422,6 +587,7 @@
 				42D6E5941A37F5BD0000F84D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42D6E5951A37F5BD0000F84D /* Build configuration list for PBXNativeTarget "syncTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +596,7 @@
 				42D6E5971A37F5BD0000F84D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

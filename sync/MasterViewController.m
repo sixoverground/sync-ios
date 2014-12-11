@@ -7,9 +7,15 @@
 //
 
 #import "MasterViewController.h"
+#import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
 #import "DetailViewController.h"
+#import "Event.h"
+#import "SyncService.h"
 
-@interface MasterViewController ()
+@interface MasterViewController () <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -25,7 +31,11 @@
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-  self.navigationItem.rightBarButtonItem = addButton;
+//  self.navigationItem.rightBarButtonItem = addButton;
+  
+  UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain target:self action:@selector(refreshObjects:)];
+  
+  self.navigationItem.rightBarButtonItems = @[addButton, refreshButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,21 +45,34 @@
 
 - (void)insertNewObject:(id)sender {
   NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-  NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-  NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-      
+//  NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+//  NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+  
   // If appropriate, configure the new managed object.
   // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-  [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-      
+//  NSDate *date = [NSDate date];
+//  [newManagedObject setValue:[date description] forKey:@"title"];
+//  [newManagedObject setValue:date forKey:@"updatedAt"];
+  
+  Event *event = [Event insertInManagedObjectContext:context];
+  NSString *uuid = [[NSUUID UUID] UUIDString];
+  event.title = uuid;
+  event.uuid = uuid;
+  event.syncStatusValue = SyncStatusUpdated;
+  
   // Save the context.
   NSError *error = nil;
-  if (![context save:&error]) {
+//  if (![context save:&error]) {
+  if (![context saveToPersistentStore:&error]) {
       // Replace this implementation with code to handle the error appropriately.
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
       NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
       abort();
   }
+}
+
+- (void)refreshObjects:(id)sender {
+  [[SyncService sharedService] sync];
 }
 
 #pragma mark - Segues
@@ -87,10 +110,14 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
       NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-      [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-          
+      //[context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    event.deletedAt = [NSDate date];
+    event.syncStatusValue = SyncStatusUpdated;
+    
       NSError *error = nil;
-      if (![context save:&error]) {
+//      if (![context save:&error]) {
+      if (![context saveToPersistentStore:&error]) {
           // Replace this implementation with code to handle the error appropriately.
           // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
           NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -100,8 +127,9 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-  NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-  cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+  Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+  cell.textLabel.text = event.title;
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", event.syncStatusValue];
 }
 
 #pragma mark - Fetched results controller
@@ -111,24 +139,29 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
+  
+  NSManagedObjectContext *managedObjectContext = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"deletedAt == nil"];
+  [fetchRequest setPredicate:predicate];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -205,5 +238,7 @@
     [self.tableView reloadData];
 }
  */
+
+
 
 @end
